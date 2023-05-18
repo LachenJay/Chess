@@ -1,5 +1,0 @@
-Player Color: Black
-Chess Piece: white pawn
-Start Position: A2
-End Position: A4
-
