@@ -36,9 +36,9 @@ public class ChessMoveRecorder {
     }
 
 
-    public void recordMove(String playerColor, String chessPiece, String startPosition, String endPosition) {
+    public void recordMove(String chessPiece, String startPosition, String endPosition) {
         try {
-            writer.write("Player Color: " + playerColor + "\n");
+
             writer.write("Chess Piece: " + chessPiece + "\n");
             writer.write("Start Position: " + startPosition + "\n");
             writer.write("End Position: " + endPosition + "\n");

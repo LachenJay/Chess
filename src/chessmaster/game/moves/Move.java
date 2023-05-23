@@ -1,6 +1,6 @@
 package chessmaster.game.moves;
 
-public class Move implements MoveInterface
+public class Move
 {
     public int x;
     public int y;

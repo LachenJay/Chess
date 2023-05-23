@@ -1,4 +1,4 @@
-package chessmaster.Figures;
+package chessmaster.figures;
 
 import chessmaster.environment.Board;
 import chessmaster.game.moves.Move;
@@ -12,13 +12,13 @@ public class Dummy extends Figure
 
     @Override
     public boolean move(Board board, Move move) {
-
         return true;
     }
 
-    @Override
-    public boolean take(Board board, Move move) {
 
-        return false;
+    public void take(Board board, Move move)
+    {
+
+
     }
 }

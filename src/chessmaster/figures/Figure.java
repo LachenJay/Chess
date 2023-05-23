@@ -1,4 +1,4 @@
-package chessmaster.Figures;
+package chessmaster.figures;
 
 import chessmaster.environment.Board;
 import chessmaster.game.moves.Move;
@@ -34,6 +34,10 @@ public abstract class Figure
         return xPosition;
     }
 
+    public char getColor()
+    {
+        return this.color;
+    }
     public void setxPosition(int xPosition) {
         this.xPosition = xPosition;
     }
@@ -48,5 +52,9 @@ public abstract class Figure
 
     public abstract boolean move(Board board, Move move);
 
-    public abstract boolean take(Board board, Move move);
+    private void take(Board board, Move move){}
+
+
+
+
 }
