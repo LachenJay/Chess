@@ -79,7 +79,7 @@ public class Bishop extends Figure {
         } else if (Math.abs(x) == absCheck && !isMine) {
             return take(board, move);
         }
-        return false;
+        return success;
     }
 
     private boolean theMove(Board board, int positionX, int positionY, int x, int y) {

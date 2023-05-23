@@ -21,7 +21,7 @@ public class King extends Figure {
         int check = 0;
 
         if (Math.abs(move.getX()) > 1 || Math.abs(move.getY()) > 1)
-            return false;
+            success = false;
 
         isMine = board.getFigureAtPosition(positionX + x, positionY + y).getColor() == this.color &&
                 board.getFigureAtPosition(positionX + x, positionY + y).getName() != 'N';
@@ -42,7 +42,7 @@ public class King extends Figure {
                             board.getFigureAtPosition(positionX, positionY + y).getColor() != 'N') {
                         success = take(board, move);
                     } else {
-                        RookMoveY(board, move, positionX, positionY, y, pathIsClear);
+                        success =RookMoveY(board, move, positionX, positionY, y, pathIsClear);
                     }
                 } else {
                     int check2 = positionY + y;
@@ -61,7 +61,7 @@ public class King extends Figure {
                             pathIsClear && board.getFigureAtPosition(positionX, positionY + y).getColor() != 'N') {
                         success = take(board, move);
                     } else {
-                        RookMoveY(board, move, positionX, positionY, y, pathIsClear);
+                        success =RookMoveY(board, move, positionX, positionY, y, pathIsClear);
                     }
                 }
             } else if (x != 0 && y == 0) {
@@ -79,7 +79,7 @@ public class King extends Figure {
                             pathIsClear && board.getFigureAtPosition(positionX + x, positionY).getColor() != 'N') {
                         success = take(board, move);
                     } else {
-                        RookMoveX(board, move, positionX, positionY, x, pathIsClear);
+                        success =RookMoveX(board, move, positionX, positionY, x, pathIsClear);
                     }
                 } else {
                     int check2 = positionX + x;
@@ -96,16 +96,17 @@ public class King extends Figure {
                             pathIsClear && board.getFigureAtPosition(positionX + x, positionY).getColor() != 'N') {
                         success = take(board, move);
                     } else {
-                        RookMoveX(board, move, positionX, positionY, x, pathIsClear);
+                        success =RookMoveX(board, move, positionX, positionY, x, pathIsClear);
                     }
                 }
             } else {
                 System.out.println("That move is illegal!");
+                success= false;
             }
         } else {
             if ((Math.abs(x) - Math.abs(y) != 0)) {
                 System.out.println("This move is illegal");
-                return false;
+                success = false;
             }
 
             if (x < 0) {

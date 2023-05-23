@@ -26,8 +26,8 @@ public class Knight extends Figure {
                 } else if (!isMine && board.getFigureAtPosition(positionX + x, positionY + y).getColor() == 'N') {
                     success = TheMove(board, positionX, positionY, x, y);
                 } else {
-                    take(board, move);
-                    success = true;
+
+                    success = take(board, move);
                 }
             } else if ((y == 2 || y == -2) && (x == 1 || x == -1)) {
                 if (isMine) {
@@ -35,8 +35,8 @@ public class Knight extends Figure {
                 } else if (!isMine && board.getFigureAtPosition(positionX + x, positionY + y).getColor() == 'N') {
                     success = TheMove(board, positionX, positionY, x, y);
                 } else {
-                    take(board, move);
-                    success = true;
+                    success =take(board, move);
+
                 }
             } else {
                 System.out.println("That move is illegal");
@@ -48,7 +48,7 @@ public class Knight extends Figure {
     }
 
 
-    public void take(Board board, Move move) {
+    public boolean take(Board board, Move move) {
         int positionX = this.xPosition;
         int positionY = this.yPosition;
         int x = move.getX();
@@ -60,7 +60,7 @@ public class Knight extends Figure {
         f.xPosition = positionX + x;
         f.yPosition = positionY + y;
         board.setFigureAtPosition(positionX + x, positionY + y, f);
-
+        return true;
     }
 
     private boolean TheMove(Board board, int positionX, int positionY, int x, int y) {

@@ -21,7 +21,7 @@ public class Pawn extends Figure {
             return success;
         }
         if (Math.abs(y) > 2 || (didMove && Math.abs(y) == 2)) {
-            System.out.println("This move is illegal");
+            System.out.println("This move is illegal!");
             success= false;
         }
 
@@ -46,7 +46,9 @@ public class Pawn extends Figure {
                     success =performMove(board, x, y);
                     didMove = true;
                 } else {
+                    success = false;
                     System.out.println("That move is illegal!");
+
                 }
             } else {
                 if (c == ' ') {
@@ -86,18 +88,28 @@ public class Pawn extends Figure {
 
         char c = board.getFigureAtPosition(currX + x, currY + y).getName();
 
-        if ((x == -1 || x == 1) && (y == 1 || y == -1)) {
-            if (c != ' ' && !isMine) {
+        if ((x == -1 || x == 1) && (y == 1 || y == -1))
+        {
+            if (c != ' ' && !isMine)
+            {
                 performMove(board, x, y);
-            } else {
-                if (isMine) {
+            }
+            else
+            {
+                if (isMine)
+                {
                     System.out.println("You can't take your own figures!");
-                } else {
+                    return false;
+                }
+                else
+                {
                     System.out.println("That move is illegal!");
+                    return false;
                 }
             }
         } else {
             System.out.println("That move is illegal!");
+            return false;
         }
         return true;
     }

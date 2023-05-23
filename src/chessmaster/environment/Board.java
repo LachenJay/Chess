@@ -3,7 +3,7 @@ package chessmaster.environment;
 import chessmaster.figures.*;
 
 public class Board {
-    private Figure[][] board;
+    private final Figure[][] board;
     private boolean isGameOn = false;
 
     public Board() {
@@ -78,9 +78,9 @@ public class Board {
         System.out.println("\nNew game has started. You are playing as white!");
     }
 
-    public boolean endGame() {
+    public void endGame() {
         isGameOn = false;
-        return true;
+
     }
 
     public boolean getIsGameOn() {
