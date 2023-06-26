@@ -1,0 +1,28 @@
+Chess Piece: white knight
+Start Position: B1
+End Position: C3
+
+Chess Piece: black pawn
+Start Position: A7
+End Position: A5
+
+Chess Piece: white pawn
+Start Position: B2
+End Position: B4
+
+Chess Piece: black pawn
+Start Position: A5
+End Position: B4
+
+Chess Piece: white bishop
+Start Position: C1
+End Position: A3
+
+Chess Piece: black pawn
+Start Position: B4
+End Position: C3
+
+Chess Piece: white pawn
+Start Position: D2
+End Position: C3
+

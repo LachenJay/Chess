@@ -19,7 +19,9 @@ public class MainMenu
         System.out.println(exit.getName() + "[" + 3 +"]");
         System.out.print("Choose by typing in a number: ");
         Scanner sc = new Scanner(System.in);
-        String choice = sc.next();
+        String choice = sc.nextLine();
+
+
 
         if(isNumber(choice))
         {
@@ -29,8 +31,13 @@ public class MainMenu
                 case 1: stGame.Action(); break;
                 case 2: plGames.Action(); break;
                 case 3: exit.Action(); break;
-                default: System.out.println("That is not a choice"); break;
+                default: System.out.println("That is not a choice"); new MainMenu(); break;
             }
+        }
+        else if(choice.trim().isEmpty() || !isNumber(choice))
+        {
+            System.out.println("That is not a choice");
+            new MainMenu();
         }
 
     }

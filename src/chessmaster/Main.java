@@ -12,7 +12,7 @@ public class Main {
         }
         catch (Exception e)
         {
-            System.out.println("Some weird error occurred: " + e);
+            System.out.println("Some weird error occurred: " + e.getMessage());
         }
     }
 }

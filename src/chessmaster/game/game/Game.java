@@ -41,7 +41,7 @@ public class Game {
                 String nextMv = sc.next();
                 startingPosition = nextMv;
                 char[] array = nextMv.toCharArray();
-                if (nextMv.equalsIgnoreCase("end")) {
+                if (nextMv.equalsIgnoreCase("end") || nextMv.equalsIgnoreCase("stop") || nextMv.equalsIgnoreCase("exit")) {
                     this.successfulTurn = true;
                     checked = true;
                 } else if (array.length > 2)
